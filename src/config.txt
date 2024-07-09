@@ -1,0 +1,15 @@
+FGSD	{"hist_bins":200, "hist_range":10}
+SF	{"dimensions":128}
+Graph2vec	{"wl_iterations":1, "dimensions":128, "down_sampling":0.0001, "attributed":True, "epochs":12, "learning_rate":0.060, "min_count":1}
+GL2Vec	{"wl_iterations":1, "dimensions":128, "down_sampling":0.0001, "epochs":12, "learning_rate":0.060, "min_count":1}
+NetLSD	{"scale_min":-2.0, "scale_max":2.0, "scale_steps":250, "scale_approximations":200}
+DeepWalk	{"walk_number":5, "walk_length":80, "dimensions":128, "window_size":10, "epochs":1, "learning_rate":0.05, "min_count":1}
+node2vec	{"dimensions":128, "walk_length":20, "num_walks":10, "p":0.95, "q":1.0, "quiet":True, "temp_folder":'tmp', "workers":6}
+Walklets	{"walk_number":5, "walk_length":80, "dimensions":32, "window_size":4, "epochs":1, "learning_rate":0.05, "min_count":1}
+BoostNE	{"dimensions":8, "iterations":16, "order":1, "alpha":0.01}
+GraphWave	{"sample_number":100, "step_size":0.2, "heat_coefficient":0.5, "approximation":100, "switch":1000, "mechanism":"approximate"}
+NMFADMM	{"dimensions":32, "iterations":100, "rho":1.0}
+GraRep	{"dimensions":32, "iteration":10, "order":5}
+NodeSketch	{"dimensions":32, "iterations":2, "decay":0.01}
+NetMF	{"dimensions":32, "iteration":10, "order":2, "negative_samples":1}
+Role2vec	{"walk_number":5, "walk_length":80, "dimensions":128, "window_size":2, "epochs":1, "learning_rate":0.05, "down_sampling":0.0001, "min_count":1, "wl_iterations":2}

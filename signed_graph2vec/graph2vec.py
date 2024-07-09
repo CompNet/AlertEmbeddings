@@ -93,7 +93,6 @@ def dataset_reader(path):
         features = {int(k): v for k, v in features.items()}
     else:'''
     features = nx.degree(graph)
-    print (features)
     features = {k: v for k, v in features}
 
     '''signs = data["signs"]
@@ -128,7 +127,7 @@ def save_embedding(output_path, model, files, dimensions):
     out = []
     for f in files:
         identifier = path2name(f)
-        out.append([identifier] + list(model.docvecs["g_"+identifier]))
+        out.append([identifier] + list(model.dv["g_"+identifier]))
     column_names = ["type"]+["x_"+str(dim) for dim in range(dimensions)]
     out = pd.DataFrame(out, columns=column_names)
     out = out.sort_values(["type"])
@@ -140,9 +139,9 @@ def main(args):
     Learn the embedding and save it.
     :param args: Object with the arguments.
     """
-    #graphs = glob.glob(os.path.join(args.input_path, "*.json"))
-    graphs = glob.glob(args.input_path, recursive=True)
-    print (str(len(graphs)) + " graphes chargés")
+
+    graphs = glob.glob(args.input_path)
+    print (str(len(graphs)) + " graphs loaded")
 
 
     print("\nFeature extraction started.\n")
