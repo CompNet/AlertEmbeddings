@@ -95,54 +95,22 @@ def gen_Graph2vec(G_train, G_test, parameters, regenerate=False, timer=True):
 	X_test = X[len(G_train):]
 	return X_train, X_test
 
-
 '''
 Creates a list of graphs from graphml files.
+
+corpus: "complet" or "equilibre", the corpus to load.
+gtype: "full", "before" or "after"
+Return: List of networkx graphs.
 '''
-def load_graphs():
-	cpt = 0
+def load_graphs(corpus, gtype):
+	graphs = []
 
-	labels = {}
-	with open("/home/ncecillon/Vidéos/graph-based_nouveau/DataTest/annotations.csv", mode='r') as file:
-		annotations_reader = csv.DictReader(file)
-		for row in annotations_reader:
-			labels[row['rev_id']] = int(row['annotation'])
-	file.close()
-
-
-	train_labels = []
-	train = []
-	with open("/home/ncecillon/Vidéos/graph-based_nouveau/DataTest/attack_train_weighted.csv", mode='r') as file:
-		train_reader = csv.DictReader(file)
-		for row in train_reader:
-			f = '/home/ncecillon/Vidéos/graph-based_nouveau/GRAPHS/full_%s.graphml' % (row['rev_id'])
-			g = nx.read_graphml(f)
-			g = nx.convert_node_labels_to_integers(g)
-			for n in g.nodes():
-				g.nodes()[n]['feature'] = g.nodes()[n]['name']
-			train.append(g)
-			train_labels.append(labels[row['rev_id']])
-			print (cpt)
-			cpt +=1
-	file.close()
-
-	test_labels = []
-	test = []
-	with open("/home/ncecillon/Vidéos/graph-based_nouveau/DataTest/attack_test.csv", mode='r') as file:
-		test_reader = csv.DictReader(file)
-		for row in test_reader:
-			f = '/home/ncecillon/Vidéos/graph-based_nouveau/GRAPHS/full_%s.graphml' % (row['rev_id'])
-			g = nx.read_graphml(f)
-			g = nx.convert_node_labels_to_integers(g)
-			for n in g.nodes():
-				g.nodes()[n]['feature'] = g.nodes()[n]['name']
-			test.append(g)
-			test_labels.append(labels[row['rev_id']])
-			print (cpt)
-			cpt +=1
-	file.close()
-
-	return train, test, train_labels, test_labels
+	for i in range(2545):
+		file = "graphs/signed/%s.graphml" % i
+		g = nx.read_graphml(file)
+		g = nx.convert_node_labels_to_integers(g)
+		graphs.append(g)
+	return graphs
 
 '''
 Computes a 10 fold cross validation.
