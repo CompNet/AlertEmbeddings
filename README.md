@@ -39,7 +39,7 @@ This library requires Python 3.8+. Dependencies car be installed with ```pip ins
 
 
 # Use
-**TODO**
+The main script is the entry point to launch all the experiments. Use `python main.py` to run it.
 
 
 # References
