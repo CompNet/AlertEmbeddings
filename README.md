@@ -14,7 +14,7 @@ AlertEmbeddings is free software: you can redistribute it and/or modify it under
 
 
 # Description
-This set of scripts aims at learning various embeddings from online conversations to detect online abuse. Two main approaches are implemented: a *content-based* approach and a *graph-based* approach, which can also be used jointly. It leverages our library [SWGE](https://github.com/CompNet/SWGE), which is described in [[C'24, CDL'24](#references)] The [Alert](https://github.com/CompNet/Alert) repository implements similar functionalities, but using feature engineering instead of learned embeddings. This software is used in [[CLDL'20a, C'24, CLD'24a](#references)] (cf. these publications for more details).
+This set of scripts aims at learning various embeddings from online conversations to detect online abuse. Two main approaches are implemented: a *content-based* approach and a *graph-based* approach, which can also be used jointly. It leverages our library [SWGE](https://github.com/CompNet/SWGE), which is described in [[C'24, CDL'24](#references)], as well as methods from the literature, as described in the experimental protocol from [[C'24, CDL'24](#references)]. The [Alert](https://github.com/CompNet/Alert) repository implements similar functionalities, but using feature engineering instead of learned embeddings. This software is used in [[CLDL'20a, C'24, CLD'24a](#references)] (cf. these publications for more details).
 
 
 # Data
