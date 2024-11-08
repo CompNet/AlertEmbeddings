@@ -14,11 +14,11 @@ AlertEmbeddings is free software: you can redistribute it and/or modify it under
 
 
 # Description
-This set of scripts aims at learning various embeddings from online conversations to detect online abuse. Two main approaches are implemented: a *content-based* approach and a *graph-based* approach, which can also be used jointly. It leverages our library [SWGE](https://github.com/CompNet/SWGE), which is described in [[C'24, CDL'24](#references)], as well as methods from the literature, as described in the experimental protocol from [[C'24, CDL'24](#references)]. The [Alert](https://github.com/CompNet/Alert) repository implements similar functionalities, but using feature engineering instead of learned embeddings. This software is used in [[CLDL'20a, C'24, CLD'24a](#references)] (cf. these publications for more details).
+This set of scripts aims at learning various embeddings from online conversations to detect online abuse. Two main approaches are implemented: a *content-based* approach and a *graph-based* approach, which can also be used jointly. It leverages our library [SWGE](https://github.com/CompNet/SWGE), which is described in [[C'24](#references), [CLDA'24](#references)], as well as methods from the literature, as described in the experimental protocol from [[C'24](#references), [CLDA'24](#references)]. The [Alert](https://github.com/CompNet/Alert) repository implements similar functionalities, but using feature engineering instead of learned embeddings. This software is used in [[CLDL'20a](#references), [C'24](#references), [CLD'24](#references)] (cf. these publications for more details).
 
 
 # Data
-This software was applied to a corpus of chat messages from the French MMORPG SpaceOrigin, already used for [Alert](https://github.com/CompNet/Alert), and presented in [[PLDL'17, PLDL'17a, PLDL'17b, PLDL'18, PLDL'19, C'19, CLDL'19](#references)]. It also requires some signed graphs extracted from this textual corpus, which are available on [Zenodo](https://doi.org/10.5281/zenodo.11617245). 
+This software was applied to a corpus of chat messages from the French MMORPG *SpaceOrigin*, already used for [Alert](https://github.com/CompNet/Alert), and presented in [[PLDL'17](#references), [PLDL'17a](#references), [PLDL'17b](#references), [PLDL'18](#references), [PLDL'19](#references), [C'19](#references), [CLDL'19](#references)]. It also requires some signed graphs extracted from this textual corpus, which are available on [Zenodo](https://doi.org/10.5281/zenodo.11617245). 
 
 These conversational networks are also included as a zip file in this repository:  unzip the `SpaceOrigin_graphs.zip` archive into the `in/graphs` folder. Conversation should be added in the `in/text_conversations` folder as a separate file for each conversation with each line corresponding to a message. An example is available on this repository.
 
@@ -35,14 +35,17 @@ Here are the folders composing the project:
 
 
 # Installation
-This library requires Python 3.8+. Dependencies car be installed with ```pip install -r requirements.txt```
+This library requires Python 3.8+. Dependencies car be installed with `pip install -r requirements.txt`
 
 The Graphormer library requires a separate installation and Python 3.9. 
-It can be installed with: \
-```git clone --recursive https://github.com/microsoft/Graphormer.git``` \
-```cd Graphormer``` \
-```bash install.sh``` \
- Graphormer’s documentation can be found [here](https://graphormer.readthedocs.io/en/latest/).
+It can be installed with:
+```
+git clone --recursive https://github.com/microsoft/Graphormer.git
+cd Graphormer
+bash install.sh
+```
+The documentation of Graphormer can be found [here](https://graphormer.readthedocs.io/en/latest/).
+
 
 # Use
 The main script is the entry point to launch all the experiments. Use `python main.py` to run it.
@@ -60,5 +63,5 @@ The main script is the entry point to launch all the experiments. Use `python ma
 * **[CLDL'20b]** N. Cécillon, V. Labatut, R. Dufour & G. Linarès. *Graph Embeddings for Abusive Language Detection*, Springer Nature Computer Science 2:37, 2020. [doi: 10.1007/s42979-020-00413-7](http://doi.org/10.1007/s42979-020-00413-7) - [⟨hal-03042171⟩](https://hal.archives-ouvertes.fr/hal-03042171)
 * **[CDL'21]** N. Cécillon, R. Dufour & V. Labatut. *Approche multimodale par plongements de texte et de graphes pour la détection de messages abusifs*, Traitement Automatique des Langues 62(2):13-38, 2021. [Journal version](https://www.atala.org/content/tal_62_2_-0) - [⟨hal-03527016⟩](https://hal.archives-ouvertes.fr/hal-03527016)
 * **[C'24]** N. Cécillon. *Combining Graph and Text to Model Conversations: An Application to Online Abuse Detection*, PhD Thesis, Avignon Université, Laboratoire Informatique d'Avignon (LIA), Avignon, FR, 2024. [⟨tel-04441308⟩](https://hal.archives-ouvertes.fr/tel-04441308)
-* **[CDL'24]** N. Cécillon, R. Dufour & V. Labatut. *Whole-Graph Representation Learning For the Classification of Signed Networks*, submitted, 2024.
-* **[CDL'24a]** N. Cécillon, R. Dufour & V. Labatut. *Conversation-Based Multimodal Abuse Detection Through Text and Graph Embeddings*, submitted, 2024.
+* **[CLDA'24]** N. Cécillon, V. Labatut, R. Dufour, N. Arınık: *Whole-Graph Representation Learning For the Classification of Signed Networks*, IEEE Access (in press), 2024. DOI: [10.1109/ACCESS.2024.3472474](https://dx.doi.org/10.1109/ACCESS.2024.3472474) [⟨hal-04712854⟩](https://hal.archives-ouvertes.fr/hal-04712854)
+* **[CLD'24]** N. Cécillon, R. Dufour & V. Labatut. *Conversation-Based Multimodal Abuse Detection Through Text and Graph Embeddings*, submitted, 2024.
