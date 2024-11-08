@@ -13,17 +13,17 @@ AlertEmbeddings is free software: you can redistribute it and/or modify it under
 -----------------------------------------------------------------------
 
 
-# Description
+## Description
 This set of scripts aims at learning various embeddings from online conversations to detect online abuse. Two main approaches are implemented: a *content-based* approach and a *graph-based* approach, which can also be used jointly. It leverages our library [SWGE](https://github.com/CompNet/SWGE), which is described in [[C'24](#references), [CLDA'24](#references)], as well as methods from the literature, as described in the experimental protocol from [[C'24](#references), [CLDA'24](#references)]. The [Alert](https://github.com/CompNet/Alert) repository implements similar functionalities, but using feature engineering instead of learned embeddings. This software is used in [[CLDL'20a](#references), [C'24](#references), [CLD'24](#references)] (cf. these publications for more details).
 
 
-# Data
+## Data
 This software was applied to a corpus of chat messages from the French MMORPG *SpaceOrigin*, already used for [Alert](https://github.com/CompNet/Alert), and presented in [[PLDL'17](#references), [PLDL'17a](#references), [PLDL'17b](#references), [PLDL'18](#references), [PLDL'19](#references), [C'19](#references), [CLDL'19](#references)]. It also requires some signed graphs extracted from this textual corpus, which are available on [Zenodo](https://doi.org/10.5281/zenodo.11617245). 
 
 These conversational networks are also included as a zip file in this repository:  unzip the `SpaceOrigin_graphs.zip` archive into the `in/graphs` folder. Conversation should be added in the `in/text_conversations` folder as a separate file for each conversation with each line corresponding to a message. An example is available on this repository.
 
 
-# Organization
+## Organization
 Here are the folders composing the project:
 * Folder `in`: input data, including the textual conversations and graphs.
 * Folder `SGCN`: set of scripts to learn embeddings using the SGCN method [CLD'24a].
@@ -34,7 +34,7 @@ Here are the folders composing the project:
 * `main.py`: main script used to launch all the experiments.
 
 
-# Installation
+## Installation
 This library requires Python 3.8+. Dependencies car be installed with `pip install -r requirements.txt`
 
 The Graphormer library requires a separate installation and Python 3.9. 
@@ -47,11 +47,11 @@ bash install.sh
 The documentation of Graphormer can be found [here](https://graphormer.readthedocs.io/en/latest/).
 
 
-# Use
+## Use
 The main script is the entry point to launch all the experiments. Use `python main.py` to run it.
 
 
-# References
+## References
 * **[PLDL'17]** É. Papegnies, V. Labatut, R. Dufour, and G. Linarès. *Detection of abusive messages in an on-line community*, 14ème Conférence en Recherche d'Information et Applications (CORIA), Marseille, FR, p.153–168, 2017. [doi: 10.24348/coria.2017.16](https://doi.org/10.24348/coria.2017.16) - [⟨hal-01505017⟩](https://hal.archives-ouvertes.fr/hal-01505017)
 * **[PLDL'17a]** É. Papegnies, V. Labatut, R. Dufour, and G. Linarès. *Graph-based Features for Automatic Online Abuse Detection*, 5th International Conference on Statistical Language and Speech Processing (SLSP), Le Mans, FR, Lecture Notes in Artificial Intelligence, 10583:70-81, 2017. [doi: 10.1007/978-3-319-68456-7_6](https://doi.org/10.1007/978-3-319-68456-7_6) - [⟨hal-01571639⟩](https://hal.archives-ouvertes.fr/hal-01571639)
 * **[PLDL'17b]** É. Papegnies, V. Labatut, R. Dufour, and G. Linarès. *Détection de messages abusifs au moyen de réseaux conversationnels*, 8ème Conférence sur les modèles et lánalyse de réseaux : approches mathématiques et informatiques (MARAMI), La Rochelle, FR, 2017. [⟨hal-01614279⟩](https://hal.archives-ouvertes.fr/hal-01614279)
