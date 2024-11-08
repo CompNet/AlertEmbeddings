@@ -37,6 +37,12 @@ Here are the folders composing the project:
 # Installation
 This library requires Python 3.8+. Dependencies car be installed with ```pip install -r requirements.txt```
 
+The Graphormer library requires a separate installation and Python 3.9. 
+It can be installed with: \
+```git clone --recursive https://github.com/microsoft/Graphormer.git``` \
+```cd Graphormer``` \
+```bash install.sh``` \
+ Graphormer’s documentation can be found [here](https://graphormer.readthedocs.io/en/latest/).
 
 # Use
 The main script is the entry point to launch all the experiments. Use `python main.py` to run it.
